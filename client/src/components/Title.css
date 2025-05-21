@@ -1,0 +1,51 @@
+.home-container {
+  justify-content: center;
+  align-items: flex-start; /* feljebb igazítjuk */
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  padding: 100rem 100rem 0; /* felül több padding, alul nulla */
+  user-select: none;
+  animation: fadeIn 1s ease forwards;
+  bottom: 100px;
+}
+
+.home-title {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 800;
+  color: #d4af37;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 4px rgba(212, 175, 55, 0.5),
+    0 6px 15px rgba(0, 0, 0, 0.4);
+  perspective: 1400px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  will-change: transform, opacity, letter-spacing;
+  text-align: center;
+  line-height: 1;
+  transition: color 0.3s ease;
+  cursor: default;
+  user-select: text;
+}
+
+.highlighted-text {
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(90deg, #f6e27f, #d4af37, #b78f2e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.7));
+  text-shadow: 0 0 2px rgba(212, 175, 55, 0.7);
+  will-change: letter-spacing, opacity;
+  transition: filter 0.3s ease;
+}
+
+.home-title:hover .highlighted-text {
+  filter: drop-shadow(0 0 2px rgba(255, 215, 0, 1));
+}
+
