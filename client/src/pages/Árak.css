@@ -1,18 +1,15 @@
 .arak-container {
   display: flex;
-  justify-content: center;      /* horizontally center cards */
-  align-items: flex-start;      /* align cards to top */
-  gap: 20px;                   /* space between cards */
-  padding: 40px;               /* optional padding around container */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 100px 40px 40px; /* ← increased top padding */
   background-color: #1e252b;
   color: #bd9f67;
   font-family: 'Arial', sans-serif;
-
-  /* Remove height or set min-height */
-  min-height: 100vh;           /* optional, or remove height completely */
-  flex-wrap: wrap;             /* allow wrapping on smaller screens */
+  min-height: 100vh;
+  flex-wrap: wrap;
 }
-
 
 .arak-container h1 {
   font-size: 24px;
