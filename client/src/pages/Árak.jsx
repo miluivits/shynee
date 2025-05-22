@@ -36,7 +36,6 @@ export default function Árak() {
         "Bőrápolás",
         "Illatosítás",
         "Viaszolás",
-        "Felnifényesítés",
       ],
       buttonText: "Luxus élmény",
     },
