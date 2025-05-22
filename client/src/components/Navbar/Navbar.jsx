@@ -36,7 +36,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <Link to="/" className="navbar__logo">
-        🔥 Huge cocks
+        COCK
       </Link>
 
       <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>

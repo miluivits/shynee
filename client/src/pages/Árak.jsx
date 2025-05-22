@@ -1,7 +1,7 @@
-import Card from "../components/Card";
+import './Árak.css';
 
 export default function Árak() {
-  return <div
+  return <div className="arak-container"
   >Árak.
   </div>;
 }

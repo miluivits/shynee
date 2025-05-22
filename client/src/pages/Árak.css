@@ -1,0 +1,16 @@
+/* Styles for Rólunk.jsx */
+
+.arak-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e252b;
+  color: #bd9f67;
+  font-family: 'Arial', sans-serif;
+}
+
+.arak-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
