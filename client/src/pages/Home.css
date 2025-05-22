@@ -2,13 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   overflow: hidden;
   position: relative;
   padding: 0 2rem;
   background: linear-gradient(-45deg, #2c3032, #232728, #424242, #d4af37);
   background-size: 400% 400%;
   animation: gradientFlow 20s ease infinite;
+  margin: 0%;
+  padding: 0%;
 }
 
 /* Gradient animation */

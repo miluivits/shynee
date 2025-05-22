@@ -1,3 +1,4 @@
+
 /* =======================
    UNIVERSAL BASE RESET
 ========================== */
@@ -24,10 +25,15 @@ html, body, #root {
   text-rendering: optimizeLegibility;
   position: relative;
   background: linear-gradient(135deg, #111111 0%, #2c2c2c 50%, #121212 100%);
+  margin: 0%;
+  padding: 0%;
+
 }
+
 
 body {
   line-height: 1.6;
+  width: 0%;
 }
 
 /* =======================

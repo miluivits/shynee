@@ -1,14 +1,26 @@
+/* Reset on root and body to avoid scroll */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* prevent scrolling */
+}
+
 .home-container {
+  display: flex;
   justify-content: center;
-  align-items: flex-start; /* feljebb igazítjuk */
+  align-items: flex-start; /* align items to the top */
+  padding-top: 15vh; /* add some space from the top */
   height: 100vh;
-  overflow-x: hidden;
+  width: 100vw;
+  overflow: hidden;
   position: relative;
-  padding: 100rem 100rem 0; /* felül több padding, alul nulla */
   user-select: none;
   animation: fadeIn 1s ease forwards;
-  bottom: 100px;
+  margin: 0;
 }
+
 
 .home-title {
   font-size: clamp(3.5rem, 8vw, 6.5rem);
@@ -30,6 +42,7 @@
   transition: color 0.3s ease;
   cursor: default;
   user-select: text;
+  margin-bottom: 200px;
 }
 
 .highlighted-text {
@@ -48,4 +61,3 @@
 .home-title:hover .highlighted-text {
   filter: drop-shadow(0 0 2px rgba(255, 215, 0, 1));
 }
-

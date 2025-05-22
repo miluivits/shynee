@@ -5,6 +5,7 @@ import Arak from './pages/Árak';
 import Rolunk from './pages/Rólunk';
 import Media from './pages/Média';
 import Navbar from './components/Navbar/Navbar';
+import 'normalize.css';
 
 
 function App() {

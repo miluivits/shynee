@@ -2,4 +2,6 @@
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
   background: linear-gradient(135deg, #111111 0%, #2c2c2c 50%, #121212 100%);
+  margin:0%;
+  padding: 0%;
 }
