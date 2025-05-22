@@ -1,6 +1,6 @@
 import './Card.css';
 
-export default function Card({ color = "green", title, price, subtitle, features = [], buttonText }) {
+export default function Card({ color = "silver", title, price, subtitle, features = [], buttonText }) {
   return (
     <div className={`card card-${color}`}>
       <span className="title">{title}</span>

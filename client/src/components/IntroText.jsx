@@ -11,8 +11,8 @@ export default function IntroText() {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 2,       // 2 másodperc várakozás indulás előtt
-        staggerChildren: 0.03,  // 30ms delay karakterenként
+        delayChildren: 1,       // 2 másodperc várakozás indulás előtt
+        staggerChildren: 0.04,  // 30ms delay karakterenként
       },
     },
   };
