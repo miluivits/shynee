@@ -23,7 +23,7 @@ export default function Title() {
           ease: "easeInOut",
         }}
       >
-        Burda Cosmetics
+        ILOVECOCKS
       </motion.span>
     </motion.h1>
   );

@@ -1,0 +1,58 @@
+.kapcsolat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px 60px;
+  background-color: #1e252b;
+  min-height: 100vh;
+  color: #f6e27f;
+  font-family: 'Playfair Display', serif;
+}
+
+.kapcsolat-card {
+  background-color: #2a2f33;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.kapcsolat-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #d4af37;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.kapcsolat-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  background: #3a3f44;
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+.kapcsolat-item:hover {
+  background: #4a4f55;
+}
+
+.kapcsolat-item a {
+  color: #f6e27f;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.kapcsolat-item a:hover {
+  color: #ffffff;
+}
+
+.kapcsolat-icon {
+  font-size: 1.5rem;
+  color: #d4af37;
+}

@@ -16,7 +16,7 @@ export default function Árak() {
       price: "1.000 Ft",
       subtitle: "Külső tisztítás",
       features: ["Habos előmosás", "Kézi mosás", "Felni tisztítás", "Szárítás"],
-      buttonText: "Foglalj most",
+      buttonText: "Érdekel",
     },
     {
       color: "gold",
@@ -24,7 +24,7 @@ export default function Árak() {
       price: "2.000 Ft",
       subtitle: "Külső + belső tisztítás",
       features: ["Külső mosás", "Belső porszívózás", "Műanyagápolás", "Ablaktisztítás"],
-      buttonText: "Prémium csomag",
+      buttonText: "Érdekel",
     },
     {
       color: "blue",
@@ -37,7 +37,7 @@ export default function Árak() {
         "Illatosítás",
         "Viaszolás",
       ],
-      buttonText: "Luxus élmény",
+      buttonText: "Érdekel",
     },
   ];
 

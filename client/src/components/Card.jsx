@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 export default function Card({ color = "silver", title, price, subtitle, features = [], buttonText }) {
@@ -15,9 +16,12 @@ export default function Card({ color = "silver", title, price, subtitle, feature
           </li>
         ))}
       </ul>
+      <Link to = "/kapcsolat">
       <button className="button">
         <span className="text-button">{buttonText}</span>
       </button>
+      </Link>
+  
     </div>
   );
 }

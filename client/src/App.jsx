@@ -5,6 +5,7 @@ import Arak from './pages/Árak';
 import Rolunk from './pages/Rólunk';
 import Media from './pages/Média';
 import Navbar from './components/Navbar/Navbar';
+import Kapcsolat from './pages/Kapcsolat';
 import 'normalize.css';
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/arak" element={<Arak />} />
         <Route path="/rolunk" element={<Rolunk />} />
         <Route path="/media" element={<Media />} />
+        <Route path="/kapcsolat" element={<Kapcsolat/>}/>
       </Routes>
     </Router>
   );
