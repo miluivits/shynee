@@ -4,7 +4,7 @@
   display: pos;
   justify-content: center;
   align-items: flex-start; /* align content at the top */
-  padding-top: 5rem; /* adjust this to control vertical offset */
+  padding-top: 15rem; /* adjust this to control vertical offset */
   height: 100vh;
   background-color: #1e252b;
   color: #bd9f67;

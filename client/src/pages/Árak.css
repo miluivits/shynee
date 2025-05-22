@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
-  padding: 100px 40px 40px; /* ← increased top padding */
+  gap: 40px;
+  padding: 150px 40px 40px; /* ← increased top padding */
   background-color: #1e252b;
   color: #bd9f67;
   font-family: 'Arial', sans-serif;

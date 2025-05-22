@@ -1,21 +1,48 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  /* Ensures full width on all screens */
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.2rem 2rem;
-  background-color: rgba(17, 17, 17, 0.95);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
-  font-family: 'Playfair Display', serif;
+  padding: 1.35rem 0rem;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.navbar {
+  font-family: 'Cinzel', serif;
+}
+
+.navbar__logo {
+  font-family: 'Amiri', serif;
+
+}
+
+.navbar__link {
+  font-family: 'Cinzel Decorative', serif;
+
+}
+
+.navbar {
+font-family: 'Domine', serif;
+
+}
+
+.navbar__logo {
+  font-size: 2.3rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+
 .patua-one-regular {
   font-family: "Patua One", serif;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -23,11 +50,11 @@
 /* === Logo === */
 .navbar__logo {
   position: absolute;
-  left: 2rem;
-  font-size: 2rem;
+  left: 1.3rem;
+  font-size: 2.0rem;
   font-weight: 800;
   color: #f5d06f;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   text-decoration: none;
   transition: opacity 0.3s ease;
@@ -38,22 +65,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 5rem;
 }
 
 /* === Individual Nav Link === */
 .navbar__link {
   position: relative;
-  color: #e8e6e3;
-  font-size: 1.15rem;
+  color: #ffffff;
+  font-size: 1.35rem;
   text-decoration: none;
-  letter-spacing: 0.07em;
-  font-weight: 500;
+  letter-spacing: 0.3em;
   padding: 0.25rem 0;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.4s ease, text-shadow 0.3s ease;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 .navbar__link::after {
@@ -111,9 +137,11 @@
 .navbar__toggle--open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .navbar__toggle--open span:nth-child(2) {
   opacity: 0;
 }
+
 .navbar__toggle--open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -142,5 +170,12 @@
 
   .navbar__toggle {
     display: flex;
+  }
+
+  .navbar__logo {
+    position: relative;
+    left: 0;
+    margin-right: auto;
+    /* pushes it to the left */
   }
 }
