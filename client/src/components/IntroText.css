@@ -1,0 +1,21 @@
+.intro-typewriter {
+  max-width: 800px;
+  margin: 2rem auto; /* kisebb felső margó, így feljebb kerül */
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  color: #ffffff;
+  white-space: pre-wrap;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.intro-typewriter p::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

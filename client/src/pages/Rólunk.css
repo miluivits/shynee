@@ -3,11 +3,13 @@
 .rolunk-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
   height: 100vh;
   background-color: #1e252b;
   color: #bd9f67;
   font-family: 'Arial', sans-serif;
+  font-weight: 100;
+  text-align: start;
 }
 
 .rolunk-container h1 {
