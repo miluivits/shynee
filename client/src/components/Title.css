@@ -52,12 +52,12 @@ html, body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.7));
+  filter: drop-shadow(0 0 1px rgba(212, 175, 55, 0.7));
   text-shadow: 0 0 2px rgba(212, 175, 55, 0.7);
   will-change: letter-spacing, opacity;
   transition: filter 0.3s ease;
 }
 
 .home-title:hover .highlighted-text {
-  filter: drop-shadow(0 0 2px rgba(255, 215, 0, 1));
+  filter: drop-shadow(0 0 1px rgba(255, 215, 0, 1));
 }
