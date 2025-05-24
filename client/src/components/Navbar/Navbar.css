@@ -17,6 +17,18 @@
 .navbar__logo img {
   width: 7%;
   margin-top: 10px;
+  animation: logoAppear 2s ease forwards;
+}
+
+@keyframes logoAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
