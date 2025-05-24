@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Navbar.css';
+import logo from './logo.png';
 
 const navLinks = [
   { path: '/arak', label: 'Árak' },
@@ -36,8 +37,9 @@ function Navbar() {
   return (
     <header className="navbar">
       <Link to="/" className="navbar__logo">
-        COCK
+        <img src={logo} alt="Company Logo" />
       </Link>
+
 
       <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
         {navLinks.map(({ path, label }, i) => (
@@ -51,9 +53,8 @@ function Navbar() {
           >
             <Link
               to={path}
-              className={`navbar__link ${
-                location.pathname === path ? 'navbar__link--active' : ''
-              }`}
+              className={`navbar__link ${location.pathname === path ? 'navbar__link--active' : ''
+                }`}
               onClick={() => setMenuOpen(false)}
             >
               {label}

@@ -14,6 +14,12 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.navbar__logo img {
+  width: 7%;
+  margin-top: 10px;
+}
+
+
 .navbar {
   font-family: 'Cinzel', serif;
 }
@@ -24,13 +30,7 @@
 }
 
 .navbar__link {
-  font-family: 'Cinzel Decorative', serif;
-
-}
-
-.navbar {
-font-family: 'Domine', serif;
-
+font-family: 'Merriweather', serif;
 }
 
 .navbar__logo {

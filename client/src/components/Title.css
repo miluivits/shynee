@@ -22,6 +22,7 @@ html, body {
 }
 
 
+
 .home-title {
   font-size: clamp(3.5rem, 8vw, 6.5rem);
   font-weight: 800;
@@ -61,3 +62,4 @@ html, body {
 .home-title:hover .highlighted-text {
   filter: drop-shadow(0 0 1px rgba(255, 215, 0, 1));
 }
+
