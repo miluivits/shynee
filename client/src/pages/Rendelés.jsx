@@ -1,10 +1,10 @@
 import Loading from '../components/Loading/Loading';
 import { useState } from 'react';
-import './Árak.css';
+import './Rendelés.css';
 import Card from '../components/Card';
 import { motion } from 'framer-motion';
 
-export default function Árak() {
+export default function Rendelés() {
   const [loading, setLoading] = useState(false);
 
   if (loading) return <Loading />;

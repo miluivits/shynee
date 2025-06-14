@@ -1,27 +1,10 @@
-/* Reset on root and body to avoid scroll */
 html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* prevent scrolling */
+  overflow-x: hidden; /* csak oldalirányban tiltsuk */
 }
-
-.home-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* align items to the top */
-  padding-top: 15vh; /* add some space from the top */
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  position: relative;
-  user-select: none;
-  animation: fadeIn 1s ease forwards;
-  margin: 0;
-}
-
-
 
 .home-title {
   font-size: clamp(3.5rem, 8vw, 6.5rem);

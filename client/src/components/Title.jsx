@@ -23,7 +23,7 @@ export default function Title() {
           ease: "easeInOut",
         }}
       >
-        ILOVECOCKS
+        SPOTLESS
       </motion.span>
     </motion.h1>
   );

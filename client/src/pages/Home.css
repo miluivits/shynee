@@ -1,49 +1,50 @@
-.home-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0 0rem;
-  background: linear-gradient(-45deg, #2c3032, #232728, #424242, #d4af37);
-  background-size: 400% 400%;
-  animation: gradientFlow 20s ease infinite;
-  margin: 0;
-  height: 100vh;
-}
+/* Home.css */
 
-.home-content {
+/* — existing styles — */
+.home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem; 
+  background-size: 400% 400%;
+  animation: gradientFlow 20s ease infinite;
 }
 
-
-/* Gradient animation */
 @keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+
+.hero-section {
+  height: 100vh;               
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;                 
+}
+
+/* — new gallery section styles — */
+.gallery-section {
+  width: 100%;
+  max-width: 1000px;
+  padding: 4rem 2rem;          /* tágas belső tér */
+  margin-bottom: 0rem;         /* space under gallery */
+  border-radius: 12px;         /* lekerekített sarkak */
+  
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
   }
 }
 
-.home-title {
-  font-size: 5rem;
-  font-weight: 700;
-  color: #d4af37; /* Luxury gold */
-  font-family: 'Playfair Display', serif;
-  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+/* opcionális: cím a galériához, ha kell */
+.gallery-section .gallery-title {
   text-align: center;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  will-change: transform, opacity;
+  font-size: 2rem;
+  color: #f5d06f;
+  margin-bottom: 2rem;
 }

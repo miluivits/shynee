@@ -1,92 +1,61 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
-  /* Ensures full width on all screens */
   z-index: 1000;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1.35rem 0rem;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
+  padding: 1.3rem 0;
+  background-color: transparent !important;
+  -webkit-backdrop-filter: none !important; 
+  backdrop-filter: none !important;      
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
+}
+
+.navbar__logo {
+  position: absolute;
+  left: 1.5rem;
 }
 
 .navbar__logo img {
-  width: 7%;
-  margin-top: 10px;
-  animation: logoAppear 2s ease forwards;
+  width: 48px;
+  height: auto;
+  animation: logoAppear 1.8s ease forwards;
 }
 
 @keyframes logoAppear {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
-  100% {
+
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-
-.navbar {
-  font-family: 'Cinzel', serif;
-}
-
-.navbar__logo {
-  font-family: 'Amiri', serif;
-
-}
-
-.navbar__link {
-font-family: 'Playfair Display', 'Georgia', serif;
-}
-
-
-
-.patua-one-regular {
-  font-family: "Patua One", serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-
-/* === Logo === */
-.navbar__logo {
-  position: absolute;
-  left: 1.3rem;
-  font-size: 2.0rem;
-  font-weight: 800;
-  color: #f5d06f;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-
-/* === Nav Links Container === */
 .navbar__nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 3rem;
 }
 
-/* === Individual Nav Link === */
 .navbar__link {
   position: relative;
-  color: #ffffff;
-  font-size: 1.35rem;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-decoration: none;
-  letter-spacing: 0.3em;
   padding: 0.25rem 0;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-  transition: color 0.4s ease, text-shadow 0.3s ease;
-  text-decoration: none;
-  font-weight: 800;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .navbar__link::after {
@@ -94,18 +63,15 @@ font-family: 'Playfair Display', 'Georgia', serif;
   position: absolute;
   left: 0;
   bottom: 0;
+  width: 0;
   height: 2px;
-  width: 0%;
   background: linear-gradient(90deg, #f6e27f, #d4af37, #b78f2e);
-  transition: width 0.4s ease;
-  border-radius: 1px;
-  opacity: 0.8;
+  transition: width 0.3s ease;
 }
 
-.navbar__link:hover {
+.navbar__link:hover,
+.navbar__link--active {
   color: #ffe189;
-  transform: translateY(-1px);
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
 }
 
 .navbar__link:hover::after,
@@ -113,20 +79,14 @@ font-family: 'Playfair Display', 'Georgia', serif;
   width: 100%;
 }
 
-.navbar__link--active {
-  color: #ffd369;
-}
-
-
-/* === Hamburger Toggle === */
 .navbar__toggle {
   display: none;
   position: absolute;
-  right: 2rem;
+  right: 1.5rem;
   width: 28px;
   height: 22px;
-  background: none;
   border: none;
+  background: none;
   cursor: pointer;
   flex-direction: column;
   justify-content: space-between;
@@ -138,7 +98,7 @@ font-family: 'Playfair Display', 'Georgia', serif;
   height: 3px;
   background: #f5d06f;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar__toggle--open span:nth-child(1) {
@@ -153,7 +113,6 @@ font-family: 'Playfair Display', 'Georgia', serif;
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* === Mobile Nav === */
 @media (max-width: 768px) {
   .navbar__nav {
     position: fixed;
@@ -162,13 +121,12 @@ font-family: 'Playfair Display', 'Georgia', serif;
     width: 260px;
     height: 100vh;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
     padding-top: 6rem;
-    background-color: rgba(26, 26, 26, 0.98);
-    box-shadow: -5px 0 25px rgba(212, 175, 55, 0.15);
-    backdrop-filter: blur(6px);
     transition: right 0.4s ease;
     overflow-y: auto;
+    background-color: rgba(26, 26, 26, 0.97);
+    backdrop-filter: blur(8px);
   }
 
   .navbar__nav--open {
@@ -179,10 +137,9 @@ font-family: 'Playfair Display', 'Georgia', serif;
     display: flex;
   }
 
+  /* Logo mobilon is balra marad */
   .navbar__logo {
     position: relative;
-    left: 0;
-    margin-right: auto;
-    /* pushes it to the left */
+    left: 1rem;
   }
 }

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Navbar.css';
 import logo from './logo.png';
 
 const navLinks = [
-  { path: '/arak', label: 'Árak' },
-  { path: '/rolunk', label: 'Rólunk' },
-  { path: '/media', label: 'Média' },
+  { path: '/rendeles', label: 'Rendelés' },
+  { path: '/rolunk',   label: 'Rólunk'   },
+  { path: '/kapcsolat',    label: 'Kapcsolat'    },
 ];
 
 const linkVariants = {
@@ -15,31 +15,41 @@ const linkVariants = {
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.15 + 0.4,
-      duration: 0.5,
-      ease: 'easeOut',
-    },
+    transition: { delay: i * 0.15 + 0.4, duration: 0.5, ease: 'easeOut' },
   }),
   hover: {
     color: '#f0c674',
-    textShadow: '0px 0px 8px rgba(212, 175, 55, 0.8)',
+    textShadow: '0px 0px 8px rgba(212,175,55,0.8)',
     transition: { type: 'spring', stiffness: 300 },
   },
 };
 
-function Navbar() {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const location = useLocation();
+  let lastScrollY = window.scrollY;
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const handleScroll = () => {
+    const currentY = window.scrollY;
+    if (currentY > lastScrollY && currentY > 80) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+    lastScrollY = currentY;
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${hidden ? 'navbar--hidden' : ''}`}>
       <Link to="/" className="navbar__logo">
-        <img src={logo} alt="Company Logo" />
+        <img src={logo} alt="Logo" />
       </Link>
-
 
       <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
         {navLinks.map(({ path, label }, i) => (
@@ -53,8 +63,9 @@ function Navbar() {
           >
             <Link
               to={path}
-              className={`navbar__link ${location.pathname === path ? 'navbar__link--active' : ''
-                }`}
+              className={`navbar__link ${
+                location.pathname === path ? 'navbar__link--active' : ''
+              }`}
               onClick={() => setMenuOpen(false)}
             >
               {label}
@@ -65,7 +76,7 @@ function Navbar() {
 
       <button
         className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
-        onClick={toggleMenu}
+        onClick={() => setMenuOpen((o) => !o)}
         aria-label="Toggle menu"
       >
         <span />
@@ -75,5 +86,3 @@ function Navbar() {
     </header>
   );
 }
-
-export default Navbar;
