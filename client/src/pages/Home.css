@@ -16,23 +16,16 @@
 }
 
 .hero-section {
-  height: 100vh;               
+  height: 80vh;               
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0;                 
+  padding: 0;         
+  margin-top: 0px;        
 }
 
 /* — new gallery section styles — */
-.gallery-section {
-  width: 100%;
-  max-width: 1000px;
-  padding: 4rem 2rem;          /* tágas belső tér */
-  margin-bottom: 0rem;         /* space under gallery */
-  border-radius: 12px;         /* lekerekített sarkak */
-  
-}
 
 @media (max-width: 768px) {
   .gallery-section {

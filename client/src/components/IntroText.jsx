@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import "./IntroText.css";
 
-const text = `Ez nem csak autómosás. Ez törődés.`;
+const text = `A Spotless-nél hisszük, hogy az autód nem csupán egy jármű – a mindennapjaid része, 
+a stílusod tükre, a kényelmed meghosszabbítása. Ezért mi nem csak lemosunk. 
+Gondoskodunk. Minden felületet, minden részletet maximális figyelemmel, 
+precizitással és szenvedéllyel kezelünk.
+Ez nem csak autómosás. Ez törődés. `;
 
 export default function IntroText() {
   const chars = Array.from(text);

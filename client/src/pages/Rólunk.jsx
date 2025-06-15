@@ -23,7 +23,6 @@ export default function Rólunk() {
       </section>
 
       <section className="gallery-section">
-        <h2 className="gallery-title">Galéria</h2>
         <Gallery images={galleryImages} />
       </section>
     </div>
