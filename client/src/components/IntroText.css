@@ -1,13 +1,13 @@
+
+
 .intro-typewriter {
-  max-width: 800px;
-  margin: 2rem auto;
   font-size: 1.5rem;
   font-weight: 600;
   font-family: 'Courier New', monospace;
   color: #ffffff;
   white-space: normal; /* ez fontos: ne legyen pre-wrap! */
   text-align: center;
-  line-height: 1.8;
+  overflow: hidden;
 }
 
 .line {

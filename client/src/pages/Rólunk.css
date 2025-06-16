@@ -1,43 +1,95 @@
-/* Styles for Rólunk.jsx */
-
 .rolunk-container {
-  display: flex;              /* flex helyesen */
-  flex-direction: column;     /* fentről lefelé */
-  justify-content: flex-start;
-  align-items: center;        /* középre vízszintesen */
-  padding: 4rem 2rem;         /* belső távolság */
-  color: #bd9f67;
-  font-family: 'Arial', sans-serif;
-  font-weight: 100;
-  text-align: start;
-  /* height: 100vh; */        /* törölve, hogy auto legyen */
-}
-
-/* Intro szöveg címe */
-.rolunk-container h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Animált logó wrapper, ha kell */
-.animated-logo-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(-50px);
+  height: 90vh;
+  overflow: hidden;
+  padding: 0;
+  color: #bd9f67;
+  font-family: Arial, sans-serif;
+  text-align: start;
 }
 
-/* ========== Galéria szekció ========== */
+/* Intro szakasz */
+.intro-section {
+  width: 100%;
+  padding: 2rem 1rem;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Képsor */
+.images-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1200px;
+  height: 60vh;
+  /* korábbi 70vh helyett, hogy feljebb kerüljenek */
+  gap: 1rem;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+  /* extra tér az aljához */
+}
+
+.full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s ease;
+  position: relative;
+}
+
+.full-image:hover {
+  transform: scale(1.015);
+  filter: brightness(1.08) contrast(1.02);
+}
+
+.divider-line {
+  width: 100%;
+  max-width: 1000px;
+  height: 3px;
+  background: #f6e27f8d;
+  margin: 0 auto 2rem auto;
+  transform-origin: center;
+}
+
+
+/* Mobil: visszaállítjuk natív flow-t */
+@media (max-width: 767px) {
+  .rolunk-container {
+    height: auto;
+    overflow: visible;
+    background: none;
+  }
+
+  .intro-section {
+    background: none;
+    height: auto;
+  }
+
+  .images-row {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .full-image {
+    height: auto;
+  }
+}
+
 .gallery-section {
   width: 100%;
   max-width: 2000px;
   margin-top: 1rem;
   padding: 5rem 0rem;
-}
-
-.gallery-title {
-  font-size: 2.5rem;
-  color: #d4af37;
-  text-align: center;
-  margin-bottom: 1.5rem;
 }

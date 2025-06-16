@@ -1,14 +1,6 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* csak oldalirányban tiltsuk */
-}
-
 .home-title {
   font-size: clamp(3.5rem, 8vw, 6.5rem);
-  font-weight: 800;
+ 
   color: #d4af37;
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;

@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
 import "./IntroText.css";
 
-const text = `A Spotless-nél hisszük, hogy az autód nem csupán egy jármű – a mindennapjaid része, 
-a stílusod tükre, a kényelmed meghosszabbítása. Ezért mi nem csak lemosunk. 
-Gondoskodunk. Minden felületet, minden részletet maximális figyelemmel, 
-precizitással és szenvedéllyel kezelünk.
+const text = `
 Ez nem csak autómosás. Ez törődés. `;
 
-export default function IntroText() {
+export default function IntroText({ onComplete }) {
   const chars = Array.from(text);
 
   const container = {
@@ -15,8 +12,8 @@ export default function IntroText() {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 1,       // 2 másodperc várakozás indulás előtt
-        staggerChildren: 0.04,  // 30ms delay karakterenként
+        delayChildren: 1,       // 1 másodperc várakozás indulás előtt
+        staggerChildren: 0.04,  // 40ms delay karakterenként
       },
     },
   };
@@ -32,6 +29,7 @@ export default function IntroText() {
       variants={container}
       initial="hidden"
       animate="visible"
+      onAnimationComplete={onComplete}
     >
       {chars.map((char, i) => (
         <motion.span key={i} variants={child}>

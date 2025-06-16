@@ -1,4 +1,11 @@
-/* Home.css */
+body {
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Edge */
+}
 
 /* — existing styles — */
 .home-container {
@@ -9,20 +16,30 @@
   animation: gradientFlow 20s ease infinite;
 }
 
+
+
 @keyframes gradientFlow {
-  0%   { background-position:   0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position:   0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hero-section {
-  height: 80vh;               
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0;         
-  margin-top: 0px;        
+  padding: 0;
+  margin-top: 0px;
 }
 
 /* — new gallery section styles — */

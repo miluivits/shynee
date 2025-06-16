@@ -1,6 +1,6 @@
 import './Kapcsolat.css';
 import { motion } from 'framer-motion';
-import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 export default function Kapcsolat() {
   return (
@@ -12,6 +12,7 @@ export default function Kapcsolat() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <h1 className="kapcsolat-title">Kapcsolat</h1>
+
         <motion.div
           className="kapcsolat-item"
           whileHover={{ scale: 1.05 }}
@@ -42,6 +43,21 @@ export default function Kapcsolat() {
             rel="noopener noreferrer"
           >
             WhatsApp üzenet
+          </a>
+        </motion.div>
+
+        <motion.div
+          className="kapcsolat-item"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FaInstagram className="kapcsolat-icon" />
+          <a
+            href="https://www.instagram.com/cegnev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram profil
           </a>
         </motion.div>
       </motion.div>
