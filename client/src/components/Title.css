@@ -1,6 +1,5 @@
 .home-title {
-  font-size: clamp(3.5rem, 8vw, 6.5rem);
- 
+  font-size: clamp(2.2rem, 8vw, 6.5rem); /* Adjusted minimum for small screens */
   color: #d4af37;
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
@@ -14,11 +13,13 @@
   display: inline-block;
   will-change: transform, opacity, letter-spacing;
   text-align: center;
-  line-height: 1;
+  line-height: 1.1;
   transition: color 0.3s ease;
   cursor: default;
   user-select: text;
   margin-bottom: 200px;
+  padding: 0 1rem; /* Ensure padding on mobile */
+  word-break: break-word;
 }
 
 .highlighted-text {
@@ -38,3 +39,11 @@
   filter: drop-shadow(0 0 1px rgba(255, 215, 0, 1));
 }
 
+/* 🔽 Mobile-specific tweaks */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: clamp(2rem, 9vw, 4.5rem);
+    margin-bottom: 120px;
+    line-height: 1.2;
+  }
+}
