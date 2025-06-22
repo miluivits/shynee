@@ -16,7 +16,7 @@ export default function Card({ color = "silver", title, price, subtitle, feature
           </li>
         ))}
       </ul>
-      <Link to = "/kapcsolat">
+      <Link to = "https://spotless.salonic.hu/">
       <button className="button">
         <span className="text-button">{buttonText}</span>
       </button>

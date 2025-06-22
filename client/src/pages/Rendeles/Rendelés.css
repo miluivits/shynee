@@ -1,0 +1,132 @@
+.cards-wrapper-rendeles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 1rem;
+  box-sizing: border-box;
+}
+
+.card-rendeles {
+  text-decoration: none;
+  position: relative;
+  box-sizing: border-box;
+  width: 384px;
+  height: 400px;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #fff;
+  user-select: none;
+  will-change: transform, box-shadow;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transition:
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  animation: fadeInOpacity 1.5s ease forwards;
+  animation-delay: var(--i);
+}
+
+.card-bg-rendeles {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1) blur(3px);
+  transition: filter 2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: filter;
+  z-index: 0;
+}
+
+.card-rendeles:hover {
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.18);
+}
+
+.card-rendeles:hover .card-bg-rendeles {
+  filter: grayscale(0) blur(0px);
+}
+
+.card-content-rendeles {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 1rem; 
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  color: #ffdd57;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  user-select: none;
+  transition: color 1s ease;
+}
+
+.card-rendeles:hover .card-content-rendeles {
+  color: #ffffff;
+  /* Hover: arany szín */
+}
+
+.card-rendeles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.card-rendeles:hover::before {
+  animation: shine 1s forwards;
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes fadeInOpacity {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobilra */
+@media (max-width: 600px) {
+  .cards-wrapper-rendeles {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .card-rendeles {
+    width: 90%;
+    max-width: 320px;
+    height: 380px;
+    font-size: 1.8rem;
+  }
+}

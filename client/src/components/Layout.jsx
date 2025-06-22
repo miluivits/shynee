@@ -11,6 +11,9 @@ export default function Layout() {
     pathname === '/rolunk'    ? 'page-rolunk'   :
     pathname === '/media'     ? 'page-media'    :
     pathname === '/kapcsolat' ? 'page-kapcsolat':
+    pathname === '/rendeles-kulso' ? 'page-rendeles-kulso':
+    pathname === '/rendeles-belso' ? 'page-rendeles-belso':
+    pathname === '/rendeles-kulso-belso' ? 'page-rendeles-kulso-belso':
                                  'page-home';
 
   return (
