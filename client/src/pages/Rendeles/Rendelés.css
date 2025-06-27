@@ -2,10 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
+  height: 90vh;
   justify-content: center;
   align-items: center;
-  padding: 7rem 1rem;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .card-rendeles {
