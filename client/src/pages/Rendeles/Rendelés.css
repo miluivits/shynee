@@ -77,7 +77,6 @@
 
 .card-rendeles:hover .card-content-rendeles {
   color: #ffffff;
-  /* Hover: arany szín */
 }
 
 .card-rendeles::before {
