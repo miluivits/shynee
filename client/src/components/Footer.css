@@ -180,4 +180,8 @@ footer p.copyright {
   .payment-logos img {
     height: 25px; /* kisebb ikonok mobilon */
   }
+
+  .footer-section.center nav {
+  gap: 0.6rem;
+}
 }
