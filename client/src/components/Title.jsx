@@ -23,7 +23,7 @@ export default function Title() {
           ease: "easeInOut",
         }}
       >
-        PARALLAX EFFECT
+        SHYNEE
       </motion.span>
     </motion.h1>
   );
