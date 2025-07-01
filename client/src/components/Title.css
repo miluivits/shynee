@@ -1,5 +1,5 @@
 .home-title {
-  font-size: clamp(2.2rem, 8vw, 6.5rem); /* Adjusted minimum for small screens */
+  font-size: clamp(2.2rem, 10vw, 9rem); /* Adjusted minimum for small screens */
   color: #d4af37;
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
