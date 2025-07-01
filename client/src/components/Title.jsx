@@ -23,7 +23,7 @@ export default function Title() {
           ease: "easeInOut",
         }}
       >
-        SPOTLESS
+        PARALLAX EFFECT
       </motion.span>
     </motion.h1>
   );

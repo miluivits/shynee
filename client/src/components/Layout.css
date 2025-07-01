@@ -7,7 +7,7 @@
 
 /* Home */
 .page-home {
-  background: linear-gradient(-45deg, #2c3032, #232728, #424242, #d4af37);
+  background: linear-gradient(-45deg, #ffc400, #4a4949, #1e252b, #1e252b);
   background-size: 400% 400%;
   animation: gradientFlow 20s ease infinite;
 }
@@ -21,7 +21,7 @@
   background-color: #1e252b;
 }
 
-.page-rendeles-kulso{
+.page-rendeles-kulso{ 
   background-color: #1e252b;
 }
 
