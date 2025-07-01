@@ -29,23 +29,24 @@
 }
 
 .footer-logo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #d4af37;
   font-weight: bold;
+  margin-top: 0.5rem;
 }
 
 .footer-hours {
-  display: flex;
-  align-items: flex-start;
   gap: 0.8rem;
   font-size: 0.95rem;
   color: #ccc;
+  margin-top: -20px;
 }
 
 .footer-section.center nav {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  margin-top: 0px;
 }
 
 .footer-section.center nav a {
