@@ -45,8 +45,7 @@
 .footer-section.center nav {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  margin-top: 0px;
+  gap: 0.1rem;
 }
 
 .footer-section.center nav a {
