@@ -6,7 +6,9 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 20px auto;
+  padding: 0 3rem;
+  padding-bottom: 25px;
 }
 
 .card-rendeles {
@@ -35,6 +37,7 @@
   opacity: 0;
   animation: fadeInOpacity 1.5s ease forwards;
   animation-delay: var(--i);
+
 }
 
 .card-bg-rendeles {
@@ -62,7 +65,7 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 0 1rem; 
+  padding: 0 1rem;
   font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-size: 2.4rem;
@@ -78,7 +81,6 @@
 
 .card-rendeles:hover .card-content-rendeles {
   color: #ffffff;
-  /* Hover: arany szín */
 }
 
 .card-rendeles::before {
@@ -104,7 +106,6 @@
   0% {
     left: -50%;
   }
-
   100% {
     left: 150%;
   }
@@ -116,17 +117,18 @@
   }
 }
 
-/* Mobilra */
+/* Mobilra - 600px alatti képernyőkre */
 @media (max-width: 600px) {
   .cards-wrapper-rendeles {
-    flex-direction: column;
+    flex-direction: column; /* egymás alá rendezve */
     gap: 1.5rem;
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem; /* egy kis extra padding */
+    height: auto; /* ne fix magas legyen */
   }
 
   .card-rendeles {
-    width: 90%;
-    max-width: 320px;
+    width: 90%; /* majdnem teljes szélesség */
+    max-width: 320px; /* max méret */
     height: 380px;
     font-size: 1.8rem;
   }

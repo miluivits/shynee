@@ -8,6 +8,9 @@
   color: #bd9f67;
   font-family: Arial, sans-serif;
   text-align: start;
+  margin: 15px auto;
+  padding: 0 3rem;
+  padding-bottom: 20px;
 }
 
 /* Intro szakasz */
@@ -86,4 +89,3 @@
     height: auto;
   }
 }
-
