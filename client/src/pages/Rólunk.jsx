@@ -1,87 +1,115 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import IntroText from "../components/IntroText";
-import Loading from "../components/Loading/Loading";
-import kep1 from '../images/kep1.png';
-import kep2 from '../images/kep2.png';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import kep1 from "../images/kep1.png";
+import kep2 from "../images/kep2.png";
+import kep3 from "../images/kep3.png";
+import video from "../videos/video1.mp4";
+import poster from "../images/kep2.png"; // Előnézeti kép, készíts vagy cseréld!
 import "./Rólunk.css";
 
 export default function Rólunk() {
-  const [loading] = useState(false);
-  const [showImages, setShowImages] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(true);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
-  if (loading) return <Loading />;
+  const images = [kep1, kep2, kep3];
+  const motto = "Minőség. Szenvedély. Megbízhatóság.";
 
-  const imagesVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        duration: 1.2,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const imageItemVariants = {
-  hidden: { opacity: 0, y: 0, scale: 0.5 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 2,
-      ease: [0.25, 0.1, 0.25, 1] // cubic-bezier: finomabb
-    }
-  }
-};
-
-
-  const lineVariants = {
-    hidden: { scaleX: 0, opacity: 0 },
-    visible: {
-      scaleX: 1,
-      opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut", delay: 0.5 }
-    }
+  const handleCanPlay = () => {
+    setContentVisible(true);
+    setVideoLoaded(true);
+    setOverlayVisible(false);
   };
 
   return (
     <div className="rolunk-container">
-      <section className="intro-section">
-        <IntroText onComplete={() => setShowImages(true)} />
+      <section className="hero-rolunk-section">
+        <div className="video-box">
+          <motion.video
+            className="hero-video"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata" // csak metaadatokat tölt be előre
+            poster={poster} // előnézeti kép
+            onCanPlay={handleCanPlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: videoLoaded ? 1 : 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
+            <source src={video} type="video/mp4" />
+            A böngésződ nem támogatja a videó lejátszást.
+          </motion.video>
+
+          {/* Overlay a videó felett */}
+          <AnimatePresence>
+            {overlayVisible && (
+              <motion.div
+                className="video-loading-overlay"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+              />
+            )}
+          </AnimatePresence>
+        </div>
+
+        <div className="hero-overlay">
+          <motion.h1
+            className="hero-motto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            {motto}
+          </motion.h1>
+
+          <motion.div
+            className="scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0, 1, 0],
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            ↓
+          </motion.div>
+        </div>
       </section>
 
-      <AnimatePresence>
-        {showImages && (
-          <>
-            <motion.div
-              className="divider-line"
-              initial="hidden"
-              animate="visible"
-              variants={lineVariants}
-            />
-            <motion.section
-              className="images-row"
-              variants={imagesVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {[kep1, kep2].map((src, i) => (
+      <section className="content-section">
+        <AnimatePresence>
+          {contentVisible &&
+            images.map((img, index) => (
+              <motion.div
+                className={`image-text-pair ${
+                  index % 2 === 0 ? "left-image" : "right-image"
+                }`}
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: index * 0.5 + 0.8 }}
+              >
                 <motion.img
-                  key={i}
-                  src={src}
-                  alt={`Kép ${i + 1}`}
-                  className="full-image"
-                  variants={imageItemVariants}
-                  whileHover={{ scale: 1.01 }}
+                  src={img}
+                  alt={`Kép ${index + 1}`}
+                  className="side-image"
+                  whileHover={{ scale: 1.015 }}
                 />
-              ))}
-            </motion.section>
-          </>
-        )}
-      </AnimatePresence>
+                <p className="image-caption">
+                  Ez a szöveg kapcsolódik a képhez {index + 1}.
+                </p>
+              </motion.div>
+            ))}
+        </AnimatePresence>
+      </section>
     </div>
   );
 }
