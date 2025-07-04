@@ -3,7 +3,7 @@
   font-family: 'Inter', sans-serif;
   color: #f0e6d2;
   overflow-x: hidden;
-  margin:0;
+  margin: 0;
   margin-top: 10px;
   padding: 0;
 }
@@ -14,8 +14,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color:#1e252b; /* fekete, vagy akár nagyon sötét szín */
-  z-index: 5; /* nagyobb mint a videó és az overlay elemek */
+  background-color: #1e252b;
+  z-index: 5;
 }
 
 .hero-rolunk-section {
@@ -45,7 +45,6 @@
   display: block;
 }
 
-/* OVERLAY – mottó + nyíl */
 .hero-overlay {
   position: relative;
   z-index: 2;
@@ -73,29 +72,26 @@
   user-select: none;
 }
 
-/* ANIMÁCIÓ */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(10px); }
 }
 
-/* TARTALOM SZEKCIÓ */
 .content-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 1.5rem;
+  padding: 2rem 0rem;
 }
 
-/* KÉP ÉS SZÖVEG BLOKKOK */
 .image-text-pair {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 10rem;
   width: 100%;
-  max-width: 1200px;
-  margin-bottom: 5rem;
+  max-width: 3000px;
+  margin-bottom: 6rem;
   flex-wrap: wrap;
   text-align: left;
 }
@@ -109,9 +105,9 @@
 }
 
 .side-image {
-  width: 45%;
-  max-width: 480px;
-  border-radius: 18px;
+  width: 40%;
+  max-width: 500px;
+  border-radius: 8px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -122,7 +118,7 @@
 }
 
 .image-caption {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: #f6e27f;
   max-width: 500px;
@@ -155,4 +151,29 @@
   .content-section {
     padding: 3rem 1rem;
   }
+}
+
+/* 🔽 ÁTMENETI HULLÁM */
+.transition-divider {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.transition-divider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.section-divider {
+  width: 100%;
+  height: 120px;
+  display: block;
+  margin-top: -2px;
+  z-index: 1;
+  position: relative;
 }
