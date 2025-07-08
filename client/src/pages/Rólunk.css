@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -37,34 +38,39 @@ html, body {
 
 .video-box {
   position: relative;
-  width: 100vw;
+  width: 100%;
+  /* ne 100vw */
   height: 100vh;
   overflow: hidden;
   z-index: 1;
 }
 
 .hero-video {
-  width: 100vw;
+  width: 100%;
+  /* ne 100vw */
   height: 100vh;
-  object-fit: cover; 
+  object-fit: cover;
   display: block;
 }
 
-
 .fullscreen-btn {
   position: absolute;
-  bottom: 60px;       /* fix távolság az aljtól */
-  right: 20px;        /* fix távolság a jobbtól */
+  bottom: 60px;
+  /* fix távolság az aljtól */
+  right: 20px;
+  /* fix távolság a jobbtól */
   z-index: 20;
   background-color: rgba(0, 0, 0, 0.6);
   color: #ffe66d;
   border: none;
-  font-size: 1.6rem;   /* kicsit nagyobb, hogy jól látszódjon */
+  font-size: 1.6rem;
+  /* kicsit nagyobb, hogy jól látszódjon */
   padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+
 .fullscreen-btn:hover {
   background-color: rgba(0, 0, 0, 0.85);
 }
@@ -97,8 +103,15 @@ html, body {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 .content-section {
