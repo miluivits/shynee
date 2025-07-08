@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import kep1 from "../images/kep1.png";
 import kep2 from "../images/kep2.png";
@@ -11,21 +11,12 @@ export default function Rólunk() {
   const [contentVisible, setContentVisible] = useState(false);
   const [overlayVisible, setOverlayVisible] = useState(true);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef(null);
 
-  // 🔁 ÚJ: képek szövegekkel
   const imageData = [
-    {
-      image: kep1,
-      text: "Ez az első kép szövege – testreszabható.",
-    },
-    {
-      image: kep2,
-      text: "Ez a második képhez tartozó egyedi leírás.",
-    },
-    {
-      image: kep3,
-      text: "Harmadik képszöveg, amit külön állíthatsz.",
-    },
+    { image: kep1, text: "Ez az első kép szövege – testreszabható." },
+    { image: kep2, text: "Ez a második képhez tartozó egyedi leírás." },
+    { image: kep3, text: "Harmadik képszöveg, amit külön állíthatsz." },
   ];
 
   const motto = "Minőség. Szenvedély. Megbízhatóság.";
@@ -36,11 +27,24 @@ export default function Rólunk() {
     setOverlayVisible(false);
   };
 
+  const handleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      } else if (videoRef.current.webkitRequestFullscreen) {
+        videoRef.current.webkitRequestFullscreen();
+      } else if (videoRef.current.msRequestFullscreen) {
+        videoRef.current.msRequestFullscreen();
+      }
+    }
+  };
+
   return (
     <div className="rolunk-container">
       <section className="hero-rolunk-section">
         <div className="video-box">
           <motion.video
+            ref={videoRef}
             className="hero-video"
             autoPlay
             loop
@@ -56,6 +60,10 @@ export default function Rólunk() {
             <source src={video} type="video/mp4" />
             A böngésződ nem támogatja a videó lejátszást.
           </motion.video>
+
+          <button className="fullscreen-btn" onClick={handleFullscreen}>
+            ⛶
+          </button>
 
           <AnimatePresence>
             {overlayVisible && (
@@ -83,22 +91,14 @@ export default function Rólunk() {
           <motion.div
             className="scroll-indicator"
             initial={{ opacity: 0 }}
-            animate={{
-              opacity: [0, 1, 0],
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            animate={{ opacity: [0, 1, 0], y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
             ↓
           </motion.div>
         </div>
       </section>
 
-      {/* Átmenet hullámmal */}
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
