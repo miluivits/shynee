@@ -182,7 +182,8 @@
     margin-bottom: 0.5rem;
   }
   .scroll-indicator {
-    font-size: 1.4rem;
+    font-size: 2rem;
+    margin-top: 370px;
   }
 
   /* Kontrol gombok közelebb a videó aljához */
