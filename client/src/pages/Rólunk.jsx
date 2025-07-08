@@ -162,24 +162,6 @@ export default function Rólunk() {
         </div>
       </section>
 
-      <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
-      >
-        <svg
-          className="section-divider"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 150"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#1e252b"
-            d="M0,64L80,90.7C160,117,320,171,480,176C640,181,800,139,960,112C1120,85,1280,75,1360,69.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-          ></path>
-        </svg>
-      </motion.div>
-
       <section className="content-section">
         <AnimatePresence>
           {contentVisible &&
