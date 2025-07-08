@@ -1,11 +1,3 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: black;
-}
-
 .rolunk-container {
   font-family: 'Inter', sans-serif;
   color: #f0e6d2;
@@ -39,7 +31,6 @@ body {
 .video-box {
   position: relative;
   width: 100%;
-  /* ne 100vw */
   height: 100vh;
   overflow: hidden;
   z-index: 1;
@@ -47,32 +38,35 @@ body {
 
 .hero-video {
   width: 100%;
-  /* ne 100vw */
   height: 100vh;
   object-fit: cover;
   display: block;
 }
 
-.fullscreen-btn {
+.video-control-btn {
   position: absolute;
   bottom: 60px;
-  /* fix távolság az aljtól */
-  right: 20px;
-  /* fix távolság a jobbtól */
   z-index: 20;
   background-color: rgba(0, 0, 0, 0.6);
   color: #ffe66d;
   border: none;
   font-size: 1.6rem;
-  /* kicsit nagyobb, hogy jól látszódjon */
   padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
-.fullscreen-btn:hover {
+.video-control-btn:hover {
   background-color: rgba(0, 0, 0, 0.85);
+}
+
+.fullscreen-btn {
+  right: 20px;
+}
+
+.replay-btn {
+  left: 20px;
 }
 
 .hero-overlay {
@@ -103,9 +97,7 @@ body {
 }
 
 @keyframes bounce {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
 
@@ -167,6 +159,10 @@ body {
     font-size: 1.8rem;
   }
 
+  .rolunk-container{
+    padding-top: 10px;
+  }
+
   .scroll-indicator {
     font-size: 1.6rem;
   }
@@ -198,4 +194,40 @@ body {
   margin-top: -2px;
   z-index: 1;
   position: relative;
+}
+
+.video-control-btn {
+  position: absolute;
+  bottom: 60px;
+  z-index: 20;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  /* Középre igazítás */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.replay-btn {
+  left: 20px;
+}
+
+/* A play ikon: tiszta CSS háromszög */
+.replay-btn::before {
+  content: "";
+  display: inline-block;
+  margin-left: 3px;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 24px solid #ffe66d; /* arany szín */
+  transition: border-left-color 0.3s ease;
+}
+
+.replay-btn:hover::before {
+  border-left-color: #ffd43b; /* világosabb arany hoverkor */
 }

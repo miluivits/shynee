@@ -1,3 +1,4 @@
+// Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -6,8 +7,8 @@ import logo from './logo.png';
 
 const navLinks = [
   { path: '/rendeles', label: 'Rendelés' },
-  { path: '/rolunk',   label: 'Rólunk'   },
-  { path: '/kapcsolat',    label: 'Kapcsolat'    },
+  { path: '/rolunk', label: 'Rólunk' },
+  { path: '/kapcsolat', label: 'Kapcsolat' },
 ];
 
 const linkVariants = {
@@ -46,43 +47,48 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`navbar ${hidden ? 'navbar--hidden' : ''}`}>
-      <Link to="/" className="navbar__logo">
-        <img src={logo} alt="Logo" />
-      </Link>
+    <>
+      <header className={`navbar ${hidden ? 'navbar--hidden' : ''}`}>
+        <Link to="/" className="navbar__logo">
+          <img src={logo} alt="Logo" />
+        </Link>
 
-      <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
-        {navLinks.map(({ path, label }, i) => (
-          <motion.div
-            key={path}
-            custom={i}
-            initial="hidden"
-            animate="visible"
-            whileHover="hover"
-            variants={linkVariants}
-          >
-            <Link
-              to={path}
-              className={`navbar__link ${
-                location.pathname === path ? 'navbar__link--active' : ''
-              }`}
-              onClick={() => setMenuOpen(false)}
+        <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
+          {navLinks.map(({ path, label }, i) => (
+            <motion.div
+              key={path}
+              custom={i}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+              variants={linkVariants}
             >
-              {label}
-            </Link>
-          </motion.div>
-        ))}
-      </nav>
+              <Link
+                to={path}
+                className={`navbar__link ${
+                  location.pathname === path ? 'navbar__link--active' : ''
+                }`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            </motion.div>
+          ))}
+        </nav>
 
-      <button
-        className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
-        onClick={() => setMenuOpen((o) => !o)}
-        aria-label="Toggle menu"
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-    </header>
+        <button
+          className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </header>
+
+      {/* Overlay – kattintásra bezárja a menüt, csak a menü mellett */}
+      {menuOpen && <div className="navbar__overlay" onClick={() => setMenuOpen(false)} />}
+    </>
   );
 }
