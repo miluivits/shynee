@@ -36,7 +36,7 @@ html, body {
 }
 
 .video-box {
-  position: relative; /* FIX: relatív pozíció kell a gombhoz */
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -50,23 +50,23 @@ html, body {
   display: block;
 }
 
-/* Teljes képernyő gomb a videóra */
+
 .fullscreen-btn {
   position: absolute;
-  bottom: 55px;
-  right: 20px;
-  z-index: 20; /* NAGYOBB, hogy biztosan látszódjon */
+  bottom: 60px;       /* fix távolság az aljtól */
+  right: 20px;        /* fix távolság a jobbtól */
+  z-index: 20;
   background-color: rgba(0, 0, 0, 0.6);
   color: #ffe66d;
   border: none;
-  font-size: 1.5rem;
-  padding: 8px 12px;
-  border-radius: 4px;
+  font-size: 1.6rem;   /* kicsit nagyobb, hogy jól látszódjon */
+  padding: 10px 14px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 .fullscreen-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .hero-overlay {
