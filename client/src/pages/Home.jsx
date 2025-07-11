@@ -1,12 +1,13 @@
-// src/pages/Home.jsx
 import React from 'react';
 import Title from '../components/Title';
 import Gallery from '../components/Gallery';
+
 import kep1 from '../images/kep1.png';
 import kep2 from '../images/kep2.png';
 import kep3 from '../images/kep3.png';
 import kep4 from '../images/kep4.png';
 import './Home.css';
+import FAQ from '../components/Faq';
 
 export default function Home() {
   const homeImages = [
@@ -25,6 +26,8 @@ export default function Home() {
       <section className="gallery-section">
         <Gallery images={homeImages} />
       </section>
+
+      <FAQ/>
     </div>
   );
 }
