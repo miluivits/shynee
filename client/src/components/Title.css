@@ -1,5 +1,5 @@
 .home-title {
-  font-size: clamp(2.2rem, 10vw, 9rem); /* Adjusted minimum for small screens */
+  font-size: clamp(2.2rem, 10vw, 9rem);
   color: #d4af37;
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
@@ -17,8 +17,8 @@
   transition: color 0.3s ease;
   cursor: default;
   user-select: text;
-  margin-bottom: 200px;
-  padding: 0 1rem; /* Ensure padding on mobile */
+  margin-bottom: 1.5rem;
+  padding: 0 5rem;
   word-break: break-word;
 }
 
@@ -39,11 +39,71 @@
   filter: drop-shadow(0 0 1px rgba(255, 215, 0, 1));
 }
 
-/* 🔽 Mobile-specific tweaks */
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: -10rem;
+}
+
+.sub-title {
+  margin-top: 0;
+  position: relative;
+  top: -1.6rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #ffffff90; /* fehérre állítva */
+  letter-spacing: 0.12em;
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.6),
+    0 2px 5px rgba(0, 0, 0, 0.3);
+  user-select: text;
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
   .home-title {
     font-size: clamp(2rem, 9vw, 4.5rem);
-    margin-bottom: 120px;
+    margin-bottom: 0.2rem;
     line-height: 1.2;
+  }
+  .sub-title {
+    top: 0rem;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+  }
+}
+
+.typing-text {
+  display: inline-block;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: #ffffff86;  /* JSX inline színnel egyezik */
+  font-weight: 900;
+  opacity: 0;
+  animation: appear 2s forwards, disappear 0.3s forwards;
+  animation-delay: 2.2s, 5s; /* 3.5s után eltűnik */
+  animation-fill-mode: forwards;
+  /* Nincs blink animáció */
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
