@@ -63,6 +63,21 @@
 
 .fullscreen-btn {
   right: 20px;
+  background-color: rgba(255, 230, 109, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 230, 109, 0.4);
+  box-shadow: 0 0 5px rgba(255, 230, 109, 0.6);
+  color: #ffe66d;
+  font-size: 1.8rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.fullscreen-btn:hover {
+  background-color: rgba(255, 230, 109, 0.2);
+  box-shadow: 0 0 10px rgba(255, 230, 109, 0.9);
 }
 
 .replay-btn {

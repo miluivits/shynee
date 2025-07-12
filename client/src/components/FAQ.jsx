@@ -29,7 +29,7 @@ export default function FAQ() {
 
   return (
     <section className="faq-wrapper">
-      <h2 className="faq-heading">Gyakran Ismételt Kérdések</h2>
+      <h2 className="faq-heading">FAQ</h2>
       <div className="faq-container">
         {faqs.map((faq, index) => (
           <div
