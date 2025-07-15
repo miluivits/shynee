@@ -12,11 +12,9 @@ export default function Title() {
     let currentIndex = 0;
 
     const typeNextChar = () => {
-      console.log("currentIndex:", currentIndex, "char:", subText[currentIndex]);
       if (currentIndex < subText.length) {
         const nextChar = subText[currentIndex];
         if (nextChar === undefined) {
-          console.error("Undefined character at index", currentIndex);
           return;
         }
         setTypedText((prev) => prev + nextChar);

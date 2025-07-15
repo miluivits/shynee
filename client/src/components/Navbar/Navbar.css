@@ -15,14 +15,27 @@
 
 .navbar__logo {
   position: absolute;
-  left: 1.5rem;
+  left: -10px;
+  top: -16px;
+  transition: all 0.4s ease-in-out;
+  /* Sima átmenet az összes tulajdonságra */
 }
 
 .navbar__logo img {
-  width: 48px;
+  width: 108px;
   height: auto;
   animation: logoAppear 1.8s ease forwards;
+  transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+  /* Átmenet a skálázáshoz és glow-hoz */
 }
+
+.navbar__logo:hover {
+  transform: scale(1.05);
+  /* Enyhe nagyítás hover közben */
+  filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.5));
+  /* SHYNEE-kék glow effekt */
+}
+
 
 @keyframes logoAppear {
   from {
@@ -45,13 +58,13 @@
 
 .navbar__link {
   position: relative;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-decoration: none;
   padding: 0.25rem 0;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -62,18 +75,58 @@
   bottom: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #f6e27f, #d4af37, #b78f2e);
+  background: linear-gradient(90deg, #00aaff, #007acc, #005f99);
+  /* SHYNEE-kék gradiens */
   transition: width 0.3s ease;
 }
 
 .navbar__link:hover,
 .navbar__link--active {
-  color: #ffe189;
+  color: #00aaff;
+  /* SHYNEE fő szín */
 }
 
 .navbar__link:hover::after,
 .navbar__link--active::after {
   width: 100%;
+}
+
+.logo-shine-wrapper {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 30px;
+  left: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.logo-shine-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  animation: shine 1s ease-in-out 1.9s forwards;
+  border-radius: 50%;
+}
+
+@keyframes shine {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 120%;
+  }
 }
 
 .navbar__toggle {
@@ -97,7 +150,8 @@
   display: block;
   width: 100%;
   height: 3px;
-  background: #f5d06f;
+  background: #00aaff;
+  /* kék toggle ikon */
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
   backface-visibility: hidden;
@@ -128,7 +182,8 @@
     padding-top: 0;
     transition: right 0.4s ease;
     overflow-y: auto;
-    background-color: rgba(26, 26, 26, 0.97);
+    background-color: rgba(10, 20, 30, 0.97);
+    /* sötét háttér a kékhez */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 9998;
@@ -138,10 +193,13 @@
     .navbar__nav {
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
-      background-color: #1a1a1a !important;
+      background-color: #0a141e !important;
     }
   }
 
+  .navbar__logo{
+    top: -14px;
+  }
   .navbar__nav--open {
     right: 0;
   }
@@ -163,15 +221,36 @@
     padding: 0;
   }
 
+  .logo-shine-wrapper {
+   top: 20px;
+   left: 18px;
+   width: 45px;
+   height: 45px;
+  }
+
   .navbar__toggle span {
     display: block;
     width: 100%;
     height: 4px;
-    background: #f5d06f;
+    background: #00aaff;
+    /* SHYNEE-kék mobile toggle */
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+  }
+
+  .navbar__logo img {
+    width: 85px;
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+    /* Átmenet mobil nézetben is */
+  }
+
+  .navbar__logo:hover {
+    transform: scale(1.05);
+    /* Ugyanaz a nagyítás mobil nézetben */
+    filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.5));
+    /* Glow effekt mobil nézetben */
   }
 
   .navbar__toggle--open span:nth-child(1) {
@@ -185,12 +264,6 @@
   .navbar__toggle--open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
-
-  .navbar__logo {
-    margin-top: 22px;
-    margin-right: auto;
-    z-index: 9999;
-  }
 }
 
 .navbar__overlay {
@@ -199,6 +272,6 @@
   left: 0;
   width: calc(100vw - 180px);
   height: 100vh;
-  background: transparent; /* vagy rgba(0,0,0,0.4), ha sötétítés kell */
-  z-index: 9990; /* menü alatt, de fölötte a háttér */
+  background: transparent;
+  z-index: 9990;
 }

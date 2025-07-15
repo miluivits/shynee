@@ -15,9 +15,7 @@ export default function Footer() {
 
           <div className="footer-hours">
             <ul>
-              <li><span>Hétfő - Péntek:</span> 09:00 - 18:00</li>
-              <li><span>Szombat:</span> 10:00 - 14:00</li>
-              <li><span>Vasárnap:</span> Zárva</li>
+              <li><span>Hétfő - Vasárnap:</span> 08:00 - 20:00</li>
             </ul>
           </div>
         </div>

@@ -1,10 +1,10 @@
 .home-title {
   font-size: clamp(2.2rem, 10vw, 9rem);
-  color: #d4af37;
+  color: #00aaff;
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
   text-shadow:
-    0 0 4px rgba(212, 175, 55, 0.5),
+    0 0 4px rgba(0, 170, 255, 0.5),
     0 6px 15px rgba(0, 0, 0, 0.4);
   perspective: 1400px;
   transform-style: preserve-3d;
@@ -25,18 +25,18 @@
 .highlighted-text {
   display: inline-block;
   color: #fff;
-  background: linear-gradient(90deg, #f6e27f, #d4af37, #b78f2e);
+  background: linear-gradient(90deg, #00aaff, #0099e0);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 1px rgba(212, 175, 55, 0.7));
-  text-shadow: 0 0 2px rgba(212, 175, 55, 0.7);
+  filter: drop-shadow(0 0 1px rgba(0, 170, 255, 0.7));
+  text-shadow: 0 0 2px rgba(0, 170, 255, 0.7);
   will-change: letter-spacing, opacity;
   transition: filter 0.3s ease;
 }
 
 .home-title:hover .highlighted-text {
-  filter: drop-shadow(0 0 1px rgba(255, 215, 0, 1));
+  filter: drop-shadow(0 0 1px rgba(0, 153, 224, 1));
 }
 
 .title-wrapper {
@@ -53,7 +53,7 @@
   top: -1.6rem;
   font-family: 'Playfair Display', serif;
   font-size: clamp(1rem, 2vw, 1.5rem);
-  color: #ffffff90; /* fehérre állítva */
+  color: #ffffff90; /* fehér maradt */
   letter-spacing: 0.12em;
   text-shadow:
     0 0 3px rgba(255, 255, 255, 0.6),
@@ -81,13 +81,12 @@
 .cursor {
   display: inline-block;
   margin-left: 4px;
-  color: #ffffff86;  /* JSX inline színnel egyezik */
+  color: #ffffffe0;  /* kék árnyalat áttetsző */
   font-weight: 900;
   opacity: 0;
   animation: appear 2s forwards, disappear 0.3s forwards;
-  animation-delay: 2.2s, 5s; /* 3.5s után eltűnik */
+  animation-delay: 2.2s, 5s;
   animation-fill-mode: forwards;
-  /* Nincs blink animáció */
 }
 
 @keyframes appear {

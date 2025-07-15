@@ -50,6 +50,7 @@ export default function Navbar() {
     <>
       <header className={`navbar ${hidden ? 'navbar--hidden' : ''}`}>
         <Link to="/" className="navbar__logo">
+          <span className="logo-shine-wrapper" />
           <img src={logo} alt="Logo" />
         </Link>
 
@@ -65,9 +66,8 @@ export default function Navbar() {
             >
               <Link
                 to={path}
-                className={`navbar__link ${
-                  location.pathname === path ? 'navbar__link--active' : ''
-                }`}
+                className={`navbar__link ${location.pathname === path ? 'navbar__link--active' : ''
+                  }`}
                 onClick={() => setMenuOpen(false)}
               >
                 {label}

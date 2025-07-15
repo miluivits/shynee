@@ -22,30 +22,42 @@ const faqs = [
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [closingIndex, setClosingIndex] = useState(null);
 
   const toggle = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    if (activeIndex === index) {
+      setClosingIndex(index);
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(index);
+      setClosingIndex(null);
+    }
   };
 
   return (
     <section className="faq-wrapper">
       <h2 className="faq-heading">FAQ</h2>
       <div className="faq-container">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className={`faq-block ${activeIndex === index ? 'active' : ''}`}
-            onClick={() => toggle(index)}
-          >
-            <div className="faq-question">
-              <span>{faq.question}</span>
-              <span className={`arrow ${activeIndex === index ? 'rotated' : ''}`}>⌄</span>
+        {faqs.map((faq, index) => {
+          const isActive = activeIndex === index;
+          const isClosing = closingIndex === index;
+
+          return (
+            <div
+              key={index}
+              className={`faq-block ${isActive ? 'active' : ''} ${isClosing ? 'closing' : ''}`}
+              onClick={() => toggle(index)}
+            >
+              <div className="faq-question">
+                <span>{faq.question}</span>
+                <span className={`arrow ${isActive ? 'rotated' : ''}`}>⌄</span>
+              </div>
+              <div className="faq-answer">
+                <p>{faq.answer}</p>
+              </div>
             </div>
-            <div className="faq-answer">
-              <p>{faq.answer}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

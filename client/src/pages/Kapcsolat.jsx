@@ -11,8 +11,6 @@ export default function Kapcsolat() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <h1 className="kapcsolat-title">Kapcsolat</h1>
-
         <motion.div
           className="kapcsolat-item"
           whileHover={{ scale: 1.05 }}
