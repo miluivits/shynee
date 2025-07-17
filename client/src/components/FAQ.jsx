@@ -36,7 +36,7 @@ export default function FAQ() {
 
   return (
     <section className="faq-wrapper">
-      <h2 className="faq-heading">FAQ</h2>
+      <h2 className="faq-heading">GYIK</h2>
       <div className="faq-container">
         {faqs.map((faq, index) => {
           const isActive = activeIndex === index;

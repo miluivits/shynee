@@ -2,6 +2,7 @@
   font-size: clamp(2.2rem, 10vw, 9rem);
   color: #00aaff;
   font-family: 'Playfair Display', serif;
+  /* font-family: 'Poppins', sans-serif; */
   text-transform: uppercase;
   text-shadow:
     0 0 4px rgba(0, 170, 255, 0.5),
