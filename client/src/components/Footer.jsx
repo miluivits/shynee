@@ -5,14 +5,16 @@ import './Footer.css';
 import simplepayLogo from '../images/logos/simplepay.svg';
 import visaLogo from '../images/logos/Visa_Inc._logo.svg';
 import mastercardLogo from '../images/logos/Mastercard.svg';
+import shyneeText from '../images/shyneetext.webp';  // <-- ide importáld a képet
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-main">
         <div className="footer-section left">
-          <h2 className="footer-logo">Shynee</h2>
-
+          {/* Szöveg helyett kép */}
+          <img src={shyneeText} alt="Shynee logo" className="footer-logo" />
+          
           <div className="footer-hours">
             <ul>
               <li><span>Hétfő - Vasárnap:</span> 08:00 - 20:00</li>

@@ -8,7 +8,7 @@
   width: 16rem;
   background-color: rgba(28, 28, 30, 0.9);
   border-radius: 1.5rem;
-  box-shadow: 
+  box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.35),
     inset 0 0 6px rgba(255, 255, 255, 0.03);
   border: 1.2px solid rgba(255, 255, 255, 0.06);
@@ -16,11 +16,12 @@
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Poppins', sans-serif;
 }
 
 .card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.45),
     inset 0 0 8px rgba(255, 255, 255, 0.05);
 }
@@ -28,7 +29,7 @@
 .card .title {
   font-size: 1.3rem;
   font-weight: 800;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.07);
@@ -43,10 +44,13 @@
 
 .card .pricing .pricing-time,
 .card .sub-title {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 800;
   letter-spacing: 0.03em;
-  opacity: 0.85;
+  opacity: 1;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  align-items: center;
 }
 
 .card .list {
@@ -70,7 +74,7 @@
   margin-right: 0.5rem;
   font-size: 1.05rem;
   font-weight: 900;
-  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.15));
+  filter: drop-shadow(0 0 0.5px rgba(255, 255, 255, 0.15));
 }
 
 .card .button {
@@ -96,7 +100,7 @@
   left: -30%;
   width: 140%;
   height: 180%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   transform: rotate(20deg);
   transition: transform 0.9s ease;
   z-index: -1;
@@ -117,19 +121,23 @@
   color: #d4af37;
   text-shadow: 0 0 3px #d4af3780;
 }
+
 .card-gold .sub-title,
 .card-gold .pricing-time {
   color: #c0a56e;
 }
+
 .card-gold .button {
   background: linear-gradient(45deg, #d4af37, #b1903e);
   color: #1e1e1e;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
   border: 1px solid #c9a634;
 }
+
 .card-gold:hover {
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
 }
+
 .card-gold .button:hover {
   background: linear-gradient(45deg, #f5d76e, #d4af37);
   box-shadow: 0 0 18px rgba(245, 215, 110, 0.6);
@@ -141,19 +149,23 @@
   color: #d6d6d6;
   text-shadow: 0 0 3px #d6d6d680;
 }
+
 .card-silver .sub-title,
 .card-silver .pricing-time {
   color: #a0a0a0;
 }
+
 .card-silver .button {
   background: linear-gradient(45deg, #cccccc, #999999);
   color: #1e1e1e;
   box-shadow: 0 0 10px rgba(204, 204, 204, 0.4);
   border: 1px solid #bdbdbd;
 }
+
 .card-silver:hover {
   box-shadow: 0 10px 30px rgba(204, 204, 204, 0.25);
 }
+
 .card-silver .button:hover {
   background: linear-gradient(45deg, #dddddd, #aaaaaa);
   box-shadow: 0 0 18px rgba(221, 221, 221, 0.5);
@@ -165,19 +177,23 @@
   color: #4a90e2;
   text-shadow: 0 0 4px #4a90e280;
 }
+
 .card-blue .sub-title,
 .card-blue .pricing-time {
   color: #357abd;
 }
+
 .card-blue .button {
   background: linear-gradient(45deg, #4a90e2, #2a5dab);
   color: #ffffff;
   box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
   border: 1px solid #357abd;
 }
+
 .card-blue:hover {
   box-shadow: 0 10px 30px rgba(74, 144, 226, 0.35);
 }
+
 .card-blue .button:hover {
   background: linear-gradient(45deg, #7ab0f5, #3781db);
   box-shadow: 0 0 20px rgba(122, 176, 245, 0.6);

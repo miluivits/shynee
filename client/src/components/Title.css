@@ -1,8 +1,7 @@
 .home-title {
   font-size: clamp(2.2rem, 10vw, 9rem);
   color: #00aaff;
-  font-family: 'Playfair Display', serif;
-  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   text-shadow:
     0 0 4px rgba(0, 170, 255, 0.5),
@@ -64,14 +63,17 @@
 }
 
 @media (max-width: 768px) {
-  .home-title {
-    font-size: clamp(2rem, 9vw, 4.5rem);
+    .home-title {
+    font-size: clamp(3.2rem, 12vw, 6rem); /* nagyobb minimum és maximum */
     margin-bottom: 0.2rem;
     line-height: 1.2;
+    padding: 0 2rem; /* kisebb padding mobilon */
   }
+
   .sub-title {
-    top: 0rem;
-    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    top: 0.2rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem); /* nagyobb subtext mobilon */
+    text-align: center;
   }
 }
 
