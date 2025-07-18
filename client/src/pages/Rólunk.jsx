@@ -22,10 +22,10 @@ export default function Rólunk() {
   const imageData = [
     {
       image: shynee,
-      text: `Cégünk egy modern, környezettudatos mobil autómosó szolgáltatás, amely az Ön kényelmét helyezi a középpontba. Hisszük, hogy az autómosásnak nem kell órákat elvennie a napjából. Éppen ezért, mi megyünk Önhöz! Legyen szó otthonáról, munkahelyéről vagy akár egy parkolóról, mobil csapatunk ott tisztítja le autóját, ahol épp szükség van rá.`,
+      text: `A Shynee 2025-ben alakult Budapesten azzal a céllal, hogy új szintre emelje az autóápolás élményét: kompromisszumok nélkül, házhoz jövünk – akár otthonodba, akár munkahelyedhez – és prémium minőségben tisztítjuk meg autódat kívül-belül.`,
     },
-    { image: kep2, text: "Ez a második képhez tartozó egyedi leírás." },
-    { image: kep3, text: "Harmadik képszöveg, amit külön állíthatsz." },
+    { image: kep2, text: "A nevünk nem véletlen gigazsák burdáék, mikor a város fényei halványan pislákolnak, a szél susogva meséli el a régi történeteket, amiket csak a lombok hallgatnak meg. A macskák csendben surrannak az árnyékok között, míg a csillagok lassan kialszanak az égen." },
+    { image: kep3, text: "Harmadik képszöveg, amit külön állíthatsz. Egy apró kávézó sarkában, ahol az illatok keverednek a nyüzsgő utcák zajával, egy öreg írógép kattogása tör át a csendet. " },
   ];
 
   useEffect(() => {
