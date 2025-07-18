@@ -75,10 +75,12 @@
   height: 56px;
   border-radius: 50%;
   transition: all 0.3s ease;
-  
-  opacity: 0; /* teljesen láthatatlan induláskor */
+
+  opacity: 0;
+  /* teljesen láthatatlan induláskor */
   animation: fadeInUp 1s ease forwards;
-  animation-delay: 1.5s; /* 1.5 másodperc késleltetés */
+  animation-delay: 1.5s;
+  /* 1.5 másodperc késleltetés */
 }
 
 
@@ -183,7 +185,8 @@
   line-height: 1.6;
   color: #ffffff;
   max-width: 500px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
   animation: fadeInUp 1.6s ease forwards;
 }
 
@@ -213,6 +216,15 @@
 
 /* 📱 Mobil fixek */
 @media (max-width: 768px) {
+
+  .video-gradient-overlay{
+    margin-top: 233px;
+  }
+
+  .video-gradient-bottom-overlay{
+    margin-bottom: 235px;
+  }
+
   .video-box {
     width: 100%;
     height: auto;
@@ -222,11 +234,12 @@
     margin-top: 1rem;
   }
 
-  .hero-video {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-  }
+ .hero-video {
+  width: 100%;
+  height: 300px;        /* ez jó így, de lehet responsive is */
+  object-fit: contain;  /* NE vágja a videót */
+}
+
 
   .hero-overlay {
     top: 1rem;
@@ -288,5 +301,44 @@
     font-size: 1rem;
     padding: 0 0.5rem;
   }
+}
+
+.video-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  /* vagy amilyen magas legyen az átmenet */
+  pointer-events: none;
+  /* ne akadályozza a kattintást */
+  z-index: 10;
+  /* a videó fölött legyen, de ne takarja az overlay-t */
+  background: linear-gradient(to bottom,
+      #1e252b, #1e252bbd,
+      /* erős fekete/fekete kék kezdés (videó sötét része) */
+      #1e252b77, #1e252b14,
+      /* a navbar sötétkék színe */
+      rgba(0, 31, 51, 0)
+      /* teljes áttetsző legyen alul */
+    );
+}
+
+.video-gradient-bottom-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  pointer-events: none;
+  z-index: 10;
+  background: linear-gradient(
+    to top,
+    #1e252baa,    /* enyhébb sötét alul */
+    #1e252b66,
+    #1e252b33,
+    #1e252b10,
+    rgba(0, 31, 51, 0)
+  );
 }
 

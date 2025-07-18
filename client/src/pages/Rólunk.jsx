@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import video from "../videos/video1.mp4";
 import poster from "../images/kep2.png";
 import kep1 from "../images/kep1.png";
@@ -19,13 +20,15 @@ export default function Rólunk() {
   const motto = "Minőség. Szenvedély. Megbízhatóság.";
 
   const imageData = [
-    { image: shynee, text: "Ez az első kép szövege – testreszabható." },
+    {
+      image: shynee,
+      text: `Cégünk egy modern, környezettudatos mobil autómosó szolgáltatás, amely az Ön kényelmét helyezi a középpontba. Hisszük, hogy az autómosásnak nem kell órákat elvennie a napjából. Éppen ezért, mi megyünk Önhöz! Legyen szó otthonáról, munkahelyéről vagy akár egy parkolóról, mobil csapatunk ott tisztítja le autóját, ahol épp szükség van rá.`,
+    },
     { image: kep2, text: "Ez a második képhez tartozó egyedi leírás." },
     { image: kep3, text: "Harmadik képszöveg, amit külön állíthatsz." },
   ];
 
   useEffect(() => {
-    // iOS detektálás
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     setIsIOS(/iPad|iPhone|iPod/.test(userAgent));
   }, []);
@@ -39,20 +42,12 @@ export default function Rólunk() {
   const handleFullscreen = () => {
     const video = videoRef.current;
     if (!video) return;
-
     setShowReplay(false);
-
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.webkitEnterFullscreen) {
-      video.webkitEnterFullscreen();
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen();
-    } else if (video.msRequestFullscreen) {
-      video.msRequestFullscreen();
-    } else {
-      alert("A fullscreen nem támogatott ezen az eszközön.");
-    }
+    if (video.requestFullscreen) video.requestFullscreen();
+    else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+    else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+    else if (video.msRequestFullscreen) video.msRequestFullscreen();
+    else alert("A fullscreen nem támogatott ezen az eszközön.");
   };
 
   const handleReplay = () => {
@@ -68,22 +63,15 @@ export default function Rólunk() {
     const video = videoRef.current;
     if (!video) return;
 
-    const resumePlayback = () => {
-      setShowReplay(true);
-    };
+    const resumePlayback = () => setShowReplay(true);
 
-    if (isIOS) {
-      video.addEventListener("webkitendfullscreen", resumePlayback);
-    }
-
+    if (isIOS) video.addEventListener("webkitendfullscreen", resumePlayback);
     document.addEventListener("fullscreenchange", resumePlayback);
     document.addEventListener("webkitfullscreenchange", resumePlayback);
     document.addEventListener("MSFullscreenChange", resumePlayback);
 
     return () => {
-      if (isIOS) {
-        video.removeEventListener("webkitendfullscreen", resumePlayback);
-      }
+      if (isIOS) video.removeEventListener("webkitendfullscreen", resumePlayback);
       document.removeEventListener("fullscreenchange", resumePlayback);
       document.removeEventListener("webkitfullscreenchange", resumePlayback);
       document.removeEventListener("MSFullscreenChange", resumePlayback);
@@ -93,6 +81,9 @@ export default function Rólunk() {
   return (
     <div className="rolunk-container">
       <section className="hero-rolunk-section">
+        <div className="video-gradient-overlay" />
+        <div className="video-gradient-bottom-overlay" />
+
         <div className="video-box">
           <motion.video
             ref={videoRef}
@@ -120,7 +111,6 @@ export default function Rólunk() {
             ⛶
           </button>
 
-          {/* Replay gomb csak iOS-en */}
           {isIOS && showReplay && (
             <button
               className="video-control-btn replay-btn"
@@ -164,28 +154,32 @@ export default function Rólunk() {
       </section>
 
       <section className="content-section">
-        <AnimatePresence>
-          {contentVisible &&
-            imageData.map((item, index) => (
-              <motion.div
-                className={`image-text-pair ${
-                  index % 2 === 0 ? "left-image" : "right-image"
+        {imageData.map((item, index) => {
+          const [ref, inView] = useInView({
+            triggerOnce: true,
+            threshold: 0.2,
+          });
+
+          return (
+            <motion.div
+              ref={ref}
+              className={`image-text-pair ${index % 2 === 0 ? "left-image" : "right-image"
                 }`}
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: index * 0.5 + 0.8 }}
-              >
-                <motion.img
-                  src={item.image}
-                  alt={`Kép ${index + 1}`}
-                  className="side-image"
-                  whileHover={{ scale: 1.015 }}
-                />
-                <p className="image-caption">{item.text}</p>
-              </motion.div>
-            ))}
-        </AnimatePresence>
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1.4, ease: "easeOut", delay: index * 0.3 }}
+            >
+              <motion.img
+                src={item.image}
+                alt={`Kép ${index + 1}`}
+                className="side-image"
+                whileHover={{ scale: 1.02 }}
+              />
+              <p className="image-caption">{item.text}</p>
+            </motion.div>
+          );
+        })}
       </section>
     </div>
   );

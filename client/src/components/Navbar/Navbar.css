@@ -196,10 +196,13 @@
     transition: right 0.4s ease;
     overflow-y: auto;
     background-color: rgba(10, 20, 30, 0.75);
-    /* sötét háttér a kékhez */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 9998;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
   }
 
   @supports (-webkit-touch-callout: none) {
@@ -210,13 +213,18 @@
     }
   }
 
-  .navbar__logo{
+  .navbar__logo {
     top: -14px;
   }
+
   .navbar__nav--open {
     right: 0;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
+  /* Animált hamburger menü megjelenés */
   .navbar__toggle {
     display: flex;
     position: absolute;
@@ -232,13 +240,23 @@
     align-items: center;
     z-index: 10000;
     padding: 0;
+    opacity: 0;
+    transform: translateY(-15px);
+    animation: toggleAppear 0.9s ease forwards 0.2s;
+  }
+
+  @keyframes toggleAppear {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .logo-shine-wrapper {
-   top: 20px;
-   left: 18px;
-   width: 45px;
-   height: 45px;
+    top: 20px;
+    left: 18px;
+    width: 45px;
+    height: 45px;
   }
 
   .navbar__toggle span {
@@ -246,24 +264,10 @@
     width: 100%;
     height: 4px;
     background: #00aaff;
-    /* SHYNEE-kék mobile toggle */
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-  }
-
-  .navbar__logo img {
-    width: 85px;
-    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
-    /* Átmenet mobil nézetben is */
-  }
-
-  .navbar__logo:hover {
-    transform: scale(1.05);
-    /* Ugyanaz a nagyítás mobil nézetben */
-    filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.5));
-    /* Glow effekt mobil nézetben */
   }
 
   .navbar__toggle--open span:nth-child(1) {
@@ -278,7 +282,17 @@
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
+  .navbar__logo img {
+    width: 85px;
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+  }
+
+  .navbar__logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.5));
+  }
 }
+
 
 .navbar__overlay {
   position: fixed;
@@ -289,3 +303,4 @@
   background: transparent;
   z-index: 9990;
 }
+
