@@ -5,6 +5,7 @@ import poster from "../images/kep2.png";
 import kep1 from "../images/kep1.png";
 import kep2 from "../images/kep2.png";
 import kep3 from "../images/kep3.png";
+import shynee from "../images/shyneeindex.png";
 import "./Rólunk.css";
 
 export default function Rólunk() {
@@ -18,7 +19,7 @@ export default function Rólunk() {
   const motto = "Minőség. Szenvedély. Megbízhatóság.";
 
   const imageData = [
-    { image: kep1, text: "Ez az első kép szövege – testreszabható." },
+    { image: shynee, text: "Ez az első kép szövege – testreszabható." },
     { image: kep2, text: "Ez a második képhez tartozó egyedi leírás." },
     { image: kep3, text: "Harmadik képszöveg, amit külön állíthatsz." },
   ];
