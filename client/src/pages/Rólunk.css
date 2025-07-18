@@ -214,15 +214,82 @@
   }
 }
 
+.video-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  /* vagy amilyen magas legyen az átmenet */
+  pointer-events: none;
+  /* ne akadályozza a kattintást */
+  z-index: 10;
+  /* a videó fölött legyen, de ne takarja az overlay-t */
+  background: linear-gradient(to bottom,
+      #1e252b, #1e252bbd,
+      /* erős fekete/fekete kék kezdés (videó sötét része) */
+      #1e252b77, #1e252b14,
+      /* a navbar sötétkék színe */
+      rgba(0, 31, 51, 0)
+      /* teljes áttetsző legyen alul */
+    );
+}
+
+.video-gradient-bottom-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  pointer-events: none;
+  z-index: 10;
+  background: linear-gradient(
+    to top,
+    #00080c,    /* enyhébb sötét alul */
+    #000e1a66,
+    #1e252b33,
+    #1e252b10,
+    rgba(0, 31, 51, 0)
+  );
+}
+
 /* 📱 Mobil fixek */
 @media (max-width: 768px) {
-
-  .video-gradient-overlay{
-    margin-top: 233px;
+  .video-gradient-overlay {
+    margin-top: 231px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      #040307,
+      #010006a2,
+      #00121e42,
+      #00121e26,
+      transparent
+    );
   }
 
-  .video-gradient-bottom-overlay{
+  .video-gradient-bottom-overlay {
     margin-bottom: 235px;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(
+      to top,
+      #07060b,
+      #07060b60,
+      #001f3322,
+      transparent
+    );
   }
 
   .video-box {
@@ -303,42 +370,5 @@
   }
 }
 
-.video-gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 15px;
-  /* vagy amilyen magas legyen az átmenet */
-  pointer-events: none;
-  /* ne akadályozza a kattintást */
-  z-index: 10;
-  /* a videó fölött legyen, de ne takarja az overlay-t */
-  background: linear-gradient(to bottom,
-      #1e252b, #1e252bbd,
-      /* erős fekete/fekete kék kezdés (videó sötét része) */
-      #1e252b77, #1e252b14,
-      /* a navbar sötétkék színe */
-      rgba(0, 31, 51, 0)
-      /* teljes áttetsző legyen alul */
-    );
-}
 
-.video-gradient-bottom-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  pointer-events: none;
-  z-index: 10;
-  background: linear-gradient(
-    to top,
-    #1e252baa,    /* enyhébb sötét alul */
-    #1e252b66,
-    #1e252b33,
-    #1e252b10,
-    rgba(0, 31, 51, 0)
-  );
-}
 
