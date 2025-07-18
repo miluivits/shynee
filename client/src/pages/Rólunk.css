@@ -75,7 +75,13 @@
   height: 56px;
   border-radius: 50%;
   transition: all 0.3s ease;
+  
+  opacity: 0; /* teljesen láthatatlan induláskor */
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.5s; /* 1.5 másodperc késleltetés */
 }
+
+
 
 .fullscreen-btn:hover {
   background-color: rgba(0, 170, 255, 0.25);
