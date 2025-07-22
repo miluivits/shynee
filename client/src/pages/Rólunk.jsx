@@ -6,8 +6,9 @@ import poster from "../images/kep2.png";
 import kep1 from "../images/kep1.png";
 import kep2 from "../images/kep2.png";
 import kep3 from "../images/kep3.png";
-import shynee from "../images/shyneeindex.png";
+import shynee from "../images/ShyneeLOGO.png";
 import "./Rólunk.css";
+import { Link } from "react-router-dom";
 
 export default function Rólunk() {
   const [contentVisible, setContentVisible] = useState(false);
@@ -181,6 +182,15 @@ export default function Rólunk() {
           );
         })}
       </section>
+      <footer className="page-motto">
+        "Shynee - Mindenhol"
+      </footer>
+      <Link to={"/rendeles"}>
+      <button className="shynee-button">
+        Rendelés
+      </button>
+      </Link>
+      
     </div>
   );
 }

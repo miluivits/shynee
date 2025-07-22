@@ -29,15 +29,15 @@
 }
 
 .footer-logo {
-  width: 150px; /* vagy amekkorára szeretnéd */
-  margin-top: -40px;
+  width: 90px; /* vagy amekkorára szeretnéd */
+  margin-top: 16px;
 }
 
 .footer-hours {
   gap: 0.8rem;
   font-size: 0.95rem;
   color: #ccc;
-  margin-top: -60px;
+  margin-top: 0px;
 }
 
 .footer-section.center nav {

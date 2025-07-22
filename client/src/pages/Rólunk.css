@@ -83,8 +83,6 @@
   /* 1.5 másodperc késleltetés */
 }
 
-
-
 .fullscreen-btn:hover {
   background-color: rgba(0, 170, 255, 0.25);
   box-shadow: 0 0 12px rgba(0, 170, 255, 0.9);
@@ -169,16 +167,18 @@
 }
 
 .side-image {
-  width: 40%;
-  max-width: 650px;
+  width: 46%;
+  max-width: 10000px;
   border-radius: 20px;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.side-image:not([src*="shyneeindex.png"]) {
+
+
+.side-image:not([src*="ShyneeLOGO.png"]) {
   width: 45%;
-  max-width: 650px;
+  max-width: 7000px;
   height: 400px;
   border-radius: 20px;
   object-fit: cover;
@@ -187,7 +187,7 @@
 
 
 /* ✅ Shadow csak akkor, ha nem shynee.png */
-.side-image:not([src*="shyneeindex.png"]):hover {
+.side-image:not([src*="ShyneeLOGO.png"]):hover {
   transform: scale(1.03);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
@@ -376,7 +376,7 @@
     gap: 3rem;
   }
 
-  .side-image.side-image:not([src*="shyneeindex.png"]) {
+  .side-image.side-image:not([src*="ShyneeLOGO.png"]) {
     width: 90%;
     height: 200px;
     max-width: none;
@@ -384,7 +384,7 @@
 
   .side-image {
     width: 100%;
-    max-width: none;
+    max-width: 400px;
   }
 
   .image-caption {
@@ -394,3 +394,82 @@
     padding: 0 0.5rem;
   }
 }
+
+.page-motto {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #00b8e6;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 2rem 1rem;
+  margin-bottom: 7rem;
+
+  position: relative;
+  z-index: 2;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: softFlow 8s ease-in-out infinite;
+  text-shadow:
+    0 0 0px rgb(3, 196, 244),
+    0 0 0px rgb(0, 184, 230);
+  transition: all 0.3s ease;
+}
+
+
+
+.shynee-button {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #00aaff;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #00aaff;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+  background-color: transparent;
+  margin-top: 1.5rem;
+  bottom: 130px;
+  left: 530px;
+  cursor: pointer;
+}
+
+.shynee-button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #00aaff;
+  z-index: -1;
+}
+
+.shynee-button:hover,
+.shynee-button:focus {
+  color: white;
+}
+
+.shynee-button:hover:before,
+.shynee-button:focus:before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.shynee-button:active {
+  transform: scale(0.95);
+}
+
